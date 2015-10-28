@@ -1,0 +1,122 @@
+/*body样式*/
+body{
+	font-size:14px;
+	background: #f2f2f2;
+	margin: 0px;
+	font-family:"微软雅黑";
+}
+/*头部*/
+header{
+	width: 100%;
+	height: 50px;
+	background: #303030;
+}
+/*logo*/
+header .logo{
+	float: left;
+	margin-left:238px;
+	width: 30px;
+	height: 50px;
+	margin-right: 50px;
+}
+/*logo img*/
+.logo img{
+	margin-top: 10px;
+}
+/*导航*/
+nav{
+	padding-top: 14px;
+}
+nav ul{
+	list-style-type: none;
+	display: inline;
+}
+nav ul li {
+	margin-right: 107px;
+	font-size:18px;
+	display: inline;
+}
+nav ul li a{
+	color:white;
+	text-decoration: none;
+}
+nav ul li a:hover{
+	color: blue;
+}
+/*内容部分*/
+.comtainer{
+	width:100%;
+}
+.tab,.Apply,.processblock,#showLend{
+	margin: 0 auto;
+}
+#tabblock1{
+	display: block;
+}
+.tab{
+	top:50px;
+	width: 960px;
+	min-height: 450px;
+	display: none;
+	margin-bottom: 20px;
+}
+.tab .processhead h1,.tab .processhead p,.Situation,.Applytitle{
+	text-align: center;
+}
+.process{
+	margin-left: 20px;
+	float:left;
+}
+/*注意事项*/
+.careabout{
+	margin-right: 20px;
+	float: right;
+}
+.processblock{
+	width: 80%;
+	color:black;
+	border-radius: 5px 5px;
+	/*background: #6a6a6a;*/
+	text-align: center;
+	padding-top:6px;
+	padding-bottom: 3px;
+}
+.processbody p{
+	font-size: 18px;
+	margin:6px 6px;
+}
+.arrow{
+	margin-left:50%;
+	width:20px;
+	height: 20px;
+}
+.Apply{
+	width:50%;
+}
+#showLend{
+	width: 80%;
+}
+
+footer{
+		width:100%;
+		height: 100px;
+		background: url('../image/ft.png') repeat;
+	}	
+	/*关于模块 版权模块*/
+	.about,.Copyright{
+		text-align: center;
+	}
+	.about ul{
+		padding-top: 30px;
+		list-style: none;
+	}
+	.about ul li{
+		display: inline;
+	}
+	.about a,.Copyright p,.Copyright a{
+		color:white;
+	}
+	.about a:hover,.Copyright a:hover{
+		color:blue;
+	}
+	
