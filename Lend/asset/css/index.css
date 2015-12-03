@@ -17,7 +17,7 @@ header .logo{
 	margin-left:238px;
 	width: 30px;
 	height: 50px;
-	margin-right: 50px;
+	margin-right: 5%;
 }
 /*logo img*/
 .logo img{
@@ -32,7 +32,7 @@ nav ul{
 	display: inline;
 }
 nav ul li {
-	margin-right: 107px;
+	margin-right: 10%;
 	font-size:18px;
 	display: inline;
 }
@@ -41,7 +41,8 @@ nav ul li a{
 	text-decoration: none;
 }
 nav ul li a:hover{
-	color: blue;
+	color:#F5F5F5;
+	text-decoration: none;
 }
 /*内容部分*/
 .comtainer{

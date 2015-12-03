@@ -37,9 +37,9 @@ if (isset($_POST['team'])) {
 	
 		$mail->AltBody    = "html"; // optional, comment out and test
 		$mail->WordWrap   = 80; // set word wrap
-		$body = "团队：".$team."; 桌子数：".$tableNum.";"." 椅子数：".$ChairNum.";
-		 投影仪：".$ProNum."; 展板 ：".$zhanban."; 申请理由：".$content."; 申请时间：
-		 ".$lendtime."点击查看审核";
+		$body = "团队：".$team.";<br/> 桌子数：".$tableNum.";<br/>"." 椅子数：".$ChairNum.";<br/>
+		 投影仪：".$ProNum.";<br/> 展板 ：".$zhanban.";<br/> 申请理由：".$content.";<br/> 申请时间：
+		 ".$lendtime."<br/><a>点击查看审核</a>";
 		$mail->MsgHTML($body);
 	
 		$mail->IsHTML(true); // send as HTML

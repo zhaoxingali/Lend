@@ -95,7 +95,6 @@
 // printf('%d',printf('%d',printf('%d',$i)));
 // 
 $str ="~~hello world~~";
-$str = str_replace(search, replace, subject)
 
 
  ?>

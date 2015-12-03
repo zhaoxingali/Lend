@@ -41,6 +41,7 @@ window.onload = function(){
     	    timeout:5000,
     	    dataType:"json",
     	    success:function(data){
+    	    	
     	    	showTable.innerHTML = "可借出数量："+(13-data.lendtable);
     	    	showchair.innerHTML = "可借出数量: "+ (10-data.lendchair);
     	    	showpro.innerHTML = "可借出数量："+(1-data.lendPro);

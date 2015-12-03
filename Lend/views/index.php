@@ -138,15 +138,16 @@
      							<p id="showchair"></p>
      						</p>
      						<p>投影仪 ：
-     							<input name="proNum" class="Projector" type="checkbox" id="Projector" value="1">
+     							&nbsp;<input name="proNum" class="Projector" type="checkbox" id="Projector" value="1">
      							<p id="showProNum"></p>
      						</p>
      						<p>展板 ：
 								&nbsp;&nbsp;&nbsp;&nbsp;<input name="zhanban" class="Projector" type="checkbox" id="zhanban" value="1">
      							<p id="showzh"></p>
      						</p>
-     						<p>时间  ：
-     							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="form-control" id="lendTime" name="time" placeholder="申请时间">
+     						<p>
+     							起始时间：<input type="datetime-local" class="form-control" id='starttime' name="starttime" placeholder="开始时间">
+     		     				归还时间：<input type="datetime-local" class="form-control" id='endtime' name="endtime" placeholder="截至时间">
      						</p>
      						<p>用途
      							<textarea class = "form-control" name="content" id="content" rows="3"></textarea>
@@ -158,9 +159,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-	<script src="../asset/js/index.js"></script>
-	<script src ="../asset/js/tab.js"></script>
 </body>
 <footer>
 	<div class='about'>
@@ -175,4 +173,7 @@
 		<p>©2011-2015 <a href='http://www.stuzone.com/'>stuzone.com</a> 版权所有 鄂ICP备05003346号 Powered By  <a href="http://www .stuzone.com/bitworkshop-beta/">比特工场</a></p>
 	</div>
 </footer>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="../asset/js/index.js"></script>
+<script src ="../asset/js/tab.js"></script>
 </html>

@@ -1,10 +1,6 @@
 
 var dataarray;
-window.onload = function(){
-	var showTable = document.getElementById("showtable"),
-		showchair = document.getElementById("showchair"),
-		showpro = document.getElementById("showProNum"),
-		showzh = document.getElementById("showzh");
+function getdata(){
 	$.ajax({
         url:'../controlls/gettotal.php',
         type:"POST",                    
@@ -12,6 +8,7 @@ window.onload = function(){
         timeout:5000,
         dataType:"json",
         success:function(data){
+  
         	dataarray = data;
         },
         error:function(error){
@@ -19,7 +16,6 @@ window.onload = function(){
         }
     });
 }
-
 function is_number(intnum,allnum){
 	var str = "";
 	if (intnum!="") {
@@ -43,14 +39,23 @@ function is_number(intnum,allnum){
 
 	
 function handleData(){
+	getdata();
 	var teamNum = document.getElementById('teamname').value,
 		tableNum = document.getElementById('tableNum').value,
 		chairNum = document.getElementById('chairNum').value,
 		projector1 = document.getElementById('Projector'),
 		zhanban1 = document.getElementById('zhanban'),
 		application = document.getElementById('content').value,
-		lendTime = document.getElementById('lendTime').value;
+		starttime = document.getElementById('starttime').value,
+		endtime = document.getElementById('endtime').value,
+		lendTime = starttime+"——"+endtime;
 	var zhanban,projector;
+	console.log(dataarray);
+	if (teamNum =='') {
+		alert('团队名称不能为空！');
+		document.getElementById('teamname').focus();
+		return false;
+	};
 	if (zhanban1.checked) {
 		zhanban = zhanban1.value;
 	}else{
@@ -65,18 +70,18 @@ function handleData(){
 		if (dataarray) {
 			if (tableNum>(13-dataarray.lendtable)) {
 				alert('桌子数超过最大可借量');
-				return ;
+				return false;
 			}
 		};
 	}else{
 		alert("桌子数"+is_number(tableNum,13));
-		return ;
+		return false;
 	};
 	if (is_number(chairNum,10)=='1') {
 		if (dataarray) {
 			if (chairNum>(10-dataarray.lendchair)) {
 				alert('椅子数超过了最大的可借量');
-				return ;
+				return false;
 			};
 		};
 	}else{
@@ -86,30 +91,32 @@ function handleData(){
 		if (dataarray) {
 			if (projector>(1-dataarray.lendPro)) {
 				alert('投影仪数超过最大的可借量');
-				return ;
+				return false;
 			};
 		};
 	}else{
 		alert("投影仪"+is_number(projector,1));
+		return false;
 	};
 	if (is_number(zhanban,1)) {
 		if (dataarray) {
 			if (zhanban>(1-dataarray.lendBoard)) {
-			alert('展板数大于超过了最大的可借量');
-			return ;
-		};
+				alert('展板数大于超过了最大的可借量');
+				return false;
+			};
 		};
 	}else{
 		alert("展板数"+is_number(zhanban,1));
-		return ;
+		return false;
 	};
 	if (application.length==0) {
 		alert("用途不能为空");
-		return ;
+		document.getElementById('content').focus();
+		return false;
 	}else{
 		if (application.length>200) {
 			alert('最大长度不能超过200个字');
-			return ;
+			return false;
 		};
 	};
 	var PostData = {
@@ -130,15 +137,7 @@ function handleData(){
         dataType:"json",
         data:PostData,
         success:function(getdata){
-        	console.log(getdata['senderror']);
         	alert("已提交申请");
-        	teamNum = document.getElementById('teamname').value='';
-			tableNum = document.getElementById('tableNum').value = '';
-			chairNum = document.getElementById('chairNum').value = '';
-			projector = document.getElementById('Projector').value= '';
-			zhanban = document.getElementById('zhanban').value='';
-			application = document.getElementById('content').value='';
-			lendTime = document.getElementById('lendTime').value='';
         },
         error:function(data){
         	console.log(data['code']);
